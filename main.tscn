@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://vnrfq48e6atr" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/fence.glb" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bbtv6l73vr5m4" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/building-type-a.glb" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://ca13vgwv4qor7" path="res://assets/models/kenney_mini-characters/Models/GLB format/character-male-c.glb" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://e7t5dw0jm2pu" path="res://scripts/jogador.gd" id="4_7mycd"]
 [ext_resource type="PackedScene" uid="uid://bkpqhhwquyyhx" path="res://assets/models/kenney_mini-characters/Models/GLB format/character-male-f.glb" id="5_lquwl"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lquwl"]
@@ -31,8 +32,8 @@ radius = 0.15429688
 height = 0.31290817
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_17gy4"]
-radius = 0.3146057
-height = 0.6292114
+radius = 0.075683594
+height = 0.36238098
 
 [node name="Principal" type="Node3D" unique_id=1982080408]
 
@@ -82,25 +83,25 @@ shape = SubResource("BoxShape3D_17gy4")
 [node name="building-type-a3" parent="Cenario/Casa" unique_id=63032633 instance=ExtResource("3_h2yge")]
 transform = Transform3D(0.999972, 0.00733661, -0.0014600543, -0.007336797, 0.99997306, -0.00012270357, 0.0014591139, 0.00013342251, 0.9999989, -0.005520463, 0, -0.8023787)
 
-[node name="Jogador" type="CharacterBody3D" parent="." unique_id=1318557001]
+[node name="Inimigo" type="CharacterBody3D" parent="." unique_id=1318557001]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23965728, 0, 0.07990539)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Jogador" unique_id=820717532]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.012953514, 0.16095638, 0.84819084)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Inimigo" unique_id=820717532]
 shape = SubResource("CapsuleShape3D_sx1ah")
 
-[node name="character-male-c2" parent="Jogador" unique_id=976872376 instance=ExtResource("4_1bvp3")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0.64808285)
+[node name="character-male-c2" parent="Inimigo" unique_id=976872376 instance=ExtResource("4_1bvp3")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0.9409673)
 
-[node name="Camera3D" type="Camera3D" parent="Jogador" unique_id=1172546221]
-transform = Transform3D(-0.99999243, -0.0012511506, 0.003682233, 0, 0.9468361, 0.32171637, -0.0038889865, 0.32171392, -0.94682896, 0.3913965, 0.37488842, 0.068448186)
+[node name="Jogador" type="CharacterBody3D" parent="." unique_id=817542823]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26712376, 0, 0.4256666)
+script = ExtResource("4_7mycd")
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="Jogador" unique_id=817542823]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2104038)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Jogador/CharacterBody3D" unique_id=44491679]
-transform = Transform3D(0.99936813, 0.025415642, 0.024851948, -0.025474451, 0.99967355, 0.0020527635, -0.024791658, -0.0026845513, 0.99968934, 0.4892528, 0.15167075, 1.4764038)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Jogador" unique_id=44491679]
+transform = Transform3D(0.99936813, 0.025415642, 0.024851948, -0.025474451, 0.99967355, 0.0020527635, -0.024791658, -0.0026845513, 0.99968934, 0.004330114, 0.17031638, -0.0004573724)
 shape = SubResource("CapsuleShape3D_17gy4")
 
-[node name="Inimigo" parent="Jogador/CharacterBody3D/CollisionShape3D" unique_id=154288169 instance=ExtResource("5_lquwl")]
-transform = Transform3D(0.50533104, -0.00026035396, 0.06885105, 2.2398892e-05, 0.50999695, 0.0017641105, -0.06885154, -0.0017449366, 0.50532806, 0.052878633, -0.16114841, 0.3591917)
+[node name="Camera3D" type="Camera3D" parent="Jogador" unique_id=1172546221]
+transform = Transform3D(-0.99998844, 0.00080137566, 0.004746193, 0.0028957203, 0.8878083, 0.46020433, -0.003844913, 0.46021277, -0.88780034, 0, 0.59575146, -0.5069099)
+
+[node name="Inimigo" parent="Jogador" unique_id=154288169 instance=ExtResource("5_lquwl")]
+transform = Transform3D(0.5100001, 0, 0, 0, 0.5100001, 0, 0, 0, 0.51000017, 0, 0, 0)
