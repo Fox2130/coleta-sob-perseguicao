@@ -1,8 +1,19 @@
 [gd_scene format=3 uid="uid://cesiu63hbgbm0"]
 
-[ext_resource type="Script" uid="uid://bxf7hsak57pks" path="res://node_3d.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://bt2j3leotjaav" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/path-long.glb" id="1_ig7tw"]
 
-[node name="Node3D" type="Node3D" unique_id=1655706833]
-script = ExtResource("1_ig7tw")
+[sub_resource type="BoxShape3D" id="BoxShape3D_sx1ah"]
+size = Vector3(0.197291, 0.016708374, 0.39995003)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=753133491]
+[node name="Principal" type="Node3D" unique_id=1982080408]
+
+[node name="Cenario" type="Node3D" parent="." unique_id=1366448546]
+
+[node name="Chao" type="StaticBody3D" parent="Cenario" unique_id=1415371535]
+
+[node name="path-long2" parent="Cenario/Chao" unique_id=1711797615 instance=ExtResource("1_ig7tw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0047106147, -0.0049054623)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cenario/Chao" unique_id=1063349605]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0002272278, 0.0005739406, -0.00021740794)
+shape = SubResource("BoxShape3D_sx1ah")
