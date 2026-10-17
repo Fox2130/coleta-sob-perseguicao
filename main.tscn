@@ -2,12 +2,16 @@
 
 [ext_resource type="PackedScene" uid="uid://bt2j3leotjaav" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/path-long.glb" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://vnrfq48e6atr" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/fence.glb" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://bbtv6l73vr5m4" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/building-type-a.glb" id="3_h2yge"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sx1ah"]
 size = Vector3(1.0635494, 0.001, 6.474432)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d1tgx"]
 size = Vector3(0.48468018, 0.27685547, 0.07910156)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_17gy4"]
+size = Vector3(1.3157501, 0.49816895, 0.95614624)
 
 [node name="Principal" type="Node3D" unique_id=1982080408]
 
@@ -25,8 +29,27 @@ shape = SubResource("BoxShape3D_sx1ah")
 [node name="Cerca" type="StaticBody3D" parent="Cenario" unique_id=168168663]
 
 [node name="fence2" parent="Cenario/Cerca" unique_id=103564696 instance=ExtResource("2_0xm2m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.050388828, 0, 0.18229297)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29258534, 0, 0.18229297)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cenario/Cerca" unique_id=1298106991]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05026245, 0.13549805, 0.18603516)
 shape = SubResource("BoxShape3D_d1tgx")
+
+[node name="Cerca2" type="StaticBody3D" parent="Cenario" unique_id=785305339]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45273894, 0, -0.0084866285)
+
+[node name="fence2" parent="Cenario/Cerca2" unique_id=1476343676 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15837133, 0, 0.18229297)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cenario/Cerca2" unique_id=445269090]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16609442, 0.13549805, 0.18603516)
+shape = SubResource("BoxShape3D_d1tgx")
+
+[node name="Casa" type="StaticBody3D" parent="Cenario" unique_id=1425045729]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cenario/Casa" unique_id=274830170]
+transform = Transform3D(1, 0, 0, 0, 0.99745214, 0.07133878, 0, -0.07133878, 0.99745214, 0.014778137, 0.258252, -0.5387469)
+shape = SubResource("BoxShape3D_17gy4")
+
+[node name="building-type-a3" parent="Cenario/Casa" unique_id=63032633 instance=ExtResource("3_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5283433)
