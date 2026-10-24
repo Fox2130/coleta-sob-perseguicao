@@ -1,17 +1,23 @@
 extends CharacterBody3D
 
+const VELOCIDADE := 2.0
+
+const GRAVIDADE := 9.8
+
 func _physics_process(delta: float) -> void:
 	
-	if Input.is_action_pressed("move_rigth"):
-		
-		velocity.x = 5
-		
-	elif Input.is_action_pressed("move_left"):
+	var direcao := Vector3. ZERO
 	
-		velocity.x = -5
+	direcao.x = Input.get_axis("move_left", "move_rigth")
+	direcao.z = Input.get_axis("move_forward", "move_back")
 	
-	else:
-		velocity.x = 0
-
+	direcao = direcao.normalized()
+	
+	velocity.x = direcao.x * VELOCIDADE
+	velocity.z = direcao.z * VELOCIDADE
+	
+	if not is_on_floor(): 	
+	
+		velocity.y -= GRAVIDADE * delta
  
 	move_and_slide()
