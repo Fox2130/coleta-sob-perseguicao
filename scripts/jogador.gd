@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 const VELOCIDADE := 2.0
 
-const GRAVIDADE := 9.8
+const GRAVIDADE := 2.0
 
 func _physics_process(delta: float) -> void:
 	
