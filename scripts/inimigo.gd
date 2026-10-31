@@ -16,7 +16,16 @@ func _physics_process(_delta: float) -> void:
 	
 	if direcao.length() <DISTANCIA_CHEGADA:
 		indice_patrulha += 1
-		
+	if indice_patrulha == pontos_patrulha.size(): 
+		indice_patrulha = 0
 	velocity = direcao.normalized() * VELOCIDADE
-		
+	
+	look_at(global_position + velocity)
+	
 	move_and_slide()
+func  _ready() -> void:
+	$AreaDeteccao.body_entered.connect(_ao_detectar_corpo_entrar)
+	
+func _ao_detectar_corpo_entrar(corpo: Node3D) -> void:
+	if corpo.is_in_group("player"):
+		print("Te vi!") 
