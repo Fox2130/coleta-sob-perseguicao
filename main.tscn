@@ -37,6 +37,9 @@ height = 0.17305565
 [sub_resource type="SphereShape3D" id="SphereShape3D_sx1ah"]
 radius = 0.6462073
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_17gy4"]
+radius = 0.29355004
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5vw27"]
 radius = 0.12841797
 height = 0.3795166
@@ -75,12 +78,6 @@ transform = Transform3D(-0.024432179, 0, 0.9997015, 0, 1, 0, -0.9997015, 0, -0.0
 [node name="fence2" parent="Cenario/Cerca/fence2" unique_id=1963645736 instance=ExtResource("2_0xm2m")]
 transform = Transform3D(0.9999293, 0, 0.011895901, 0, 1, 0, -0.011895901, 0, 0.9999293, -0.48706943, -0.0046352446, 0.001704812)
 
-[node name="fence2" parent="Cenario/Cerca/fence2/fence2" unique_id=1868852278 instance=ExtResource("2_0xm2m")]
-transform = Transform3D(0.9999293, 0, 0.011895901, 0, 1, 0, -0.011895901, 0, 0.9999293, -0.48706943, -0.0046352446, 0.001704812)
-
-[node name="fence2" parent="Cenario/Cerca/fence2/fence2/fence2" unique_id=2028768212 instance=ExtResource("2_0xm2m")]
-transform = Transform3D(0.9999293, 0, 0.011895901, 0, 1, 0, -0.011895901, 0, 0.9999293, -0.48706943, -0.0046352446, 0.001704812)
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cenario/Cerca" unique_id=1298106991]
 transform = Transform3D(-0.024432179, 0, 0.9997015, 0, 1, 0, -0.9997015, 0, -0.024432179, -0.49622893, 0.13549805, 0.18603516)
 shape = SubResource("BoxShape3D_d1tgx")
@@ -93,12 +90,6 @@ transform = Transform3D(-0.024432179, 0, -0.9997015, 0, 1, 0, 0.9997015, 0, -0.0
 
 [node name="fence2" parent="Cenario/Cerca2/fence2" unique_id=1862893852 instance=ExtResource("2_0xm2m")]
 transform = Transform3D(0.99982435, -0.01751095, -0.0067015328, 0.017505603, 0.9998463, -0.0008561665, 0.0067155287, 0.00073870283, 0.9999776, 0.49390343, 0.0079497695, 0.004503697)
-
-[node name="fence2" parent="Cenario/Cerca2/fence2/fence2" unique_id=441904065 instance=ExtResource("2_0xm2m")]
-transform = Transform3D(0.9998242, -0.017510949, -0.006701531, 0.017505601, 0.9998462, -0.00085616636, 0.0067155305, 0.00073870266, 0.9999775, 0.5145127, 0.007588387, 0.0038616657)
-
-[node name="fence2" parent="Cenario/Cerca2/fence2/fence2/fence2" unique_id=2014723670 instance=ExtResource("2_0xm2m")]
-transform = Transform3D(0.9993792, -0.017378364, 0.030647222, 0.017452862, 0.99984515, -0.002164988, -0.030604824, 0.0026985253, 0.99952817, 0.4939034, 0.007949768, 0.004503697)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cenario/Cerca2" unique_id=445269090]
 transform = Transform3D(-0.024432179, 0, -0.9997015, 0, 1, 0, 0.9997015, 0, -0.024432179, 0.04396695, 0.13549805, 0.18603516)
@@ -132,6 +123,13 @@ transform = Transform3D(-0.49999315, 0, -0.0026179869, 0, 0.5, 0, 0.0026179869, 
 transform = Transform3D(0.9878353, 0, 0.15550391, 0, 1, 0, -0.15550391, 0, 0.9878353, 0.16926566, 0.02737552, 0.12135774)
 shape = SubResource("SphereShape3D_sx1ah")
 
+[node name="AreaCaptura" type="Area3D" parent="Inimigo" unique_id=484118016]
+transform = Transform3D(-0.50225216, -1.146467e-10, -0.08856066, -1.1641532e-10, 0.5100002, 0, 0.08856067, 2.0215316e-11, -0.5022521, 0.24590942, 0.003612185, -0.4665197)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Inimigo/AreaCaptura" unique_id=2008535842]
+transform = Transform3D(1, 4.0505793e-16, 0, -8.6736174e-19, 0.99999964, -7.979728e-17, 0, -6.2450045e-17, 1, 0.15632123, 0.20343317, -0.99817216)
+shape = SubResource("SphereShape3D_17gy4")
+
 [node name="Jogador" type="CharacterBody3D" parent="." unique_id=817542823 groups=["player"]]
 transform = Transform3D(-0.9848077, 0, -0.1736483, 0, 1, 0, 0.1736483, 0, -0.9848077, -0.085066736, -0.012267247, 2.2265716)
 wall_min_slide_angle = 0.46774822
@@ -146,7 +144,7 @@ transform = Transform3D(-0.9914449, 0, 0.13052627, 0, 1, 0, -0.13052627, 0, -0.9
 fov = 53.952614
 
 [node name="Inimigo" parent="Jogador" unique_id=154288169 instance=ExtResource("5_lquwl")]
-transform = Transform3D(0.5100002, 1.16415315e-10, 0, -1.1641532e-10, 0.5100002, 0, 0, 3.469447e-18, 0.51000017, -0.02276197, 0.015879432, -0.39679456)
+transform = Transform3D(0.5100002, 1.16415315e-10, 0, -1.1641532e-10, 0.5100002, 0, 0, 5.2041704e-18, 0.51000017, -0.022761941, 0.015879432, -0.3967948)
 
 [node name="Itens" type="Node3D" parent="." unique_id=191568201]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1981352, -0.0738942)

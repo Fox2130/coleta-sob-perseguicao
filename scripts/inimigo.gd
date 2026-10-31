@@ -9,7 +9,7 @@ var referencia_jogador: Node3D = null
 	
 var indice_patrulha := 0
 
-const VELOCIDADE  : = 1.0
+const VELOCIDADE  : = 0.5
 
 const DISTANCIA_CHEGADA := 0.2
 
@@ -28,6 +28,7 @@ func _physics_process(_delta: float) -> void:
 func  _ready() -> void:
 	$AreaDeteccao.body_entered.connect(_ao_detectar_corpo_entrar)
 	$AreaDeteccao.body_exited.connect (_ao_detectar_corpo_sair)
+	$AreaCaptura.body_entered.connect(_ao_detectar_corpo_entrar)
 	
 func  _ao_detectar_corpo_sair( corpo: Node3D) -> void:
 	if corpo.is_in_group("player"):
@@ -36,6 +37,7 @@ func  _ao_detectar_corpo_sair( corpo: Node3D) -> void:
 		
 func _ao_detectar_corpo_entrar(corpo: Node3D) -> void:
 	if corpo.is_in_group("player"):
+		print("Peguei você!")
 		
 		referencia_jogador = corpo
 		estado = Estado. PERSEGUICAO
