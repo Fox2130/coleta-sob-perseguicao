@@ -35,7 +35,7 @@ radius = 0.001
 height = 0.17305565
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_sx1ah"]
-radius = 0.99171954
+radius = 0.6462073
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5vw27"]
 radius = 0.12841797
@@ -72,6 +72,15 @@ shape = SubResource("BoxShape3D_sx1ah")
 [node name="fence2" parent="Cenario/Cerca" unique_id=103564696 instance=ExtResource("2_0xm2m")]
 transform = Transform3D(-0.024432179, 0, 0.9997015, 0, 1, 0, -0.9997015, 0, -0.024432179, -0.49162802, 0.014574468, 0.18822315)
 
+[node name="fence2" parent="Cenario/Cerca/fence2" unique_id=1963645736 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(0.9999293, 0, 0.011895901, 0, 1, 0, -0.011895901, 0, 0.9999293, -0.48706943, -0.0046352446, 0.001704812)
+
+[node name="fence2" parent="Cenario/Cerca/fence2/fence2" unique_id=1868852278 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(0.9999293, 0, 0.011895901, 0, 1, 0, -0.011895901, 0, 0.9999293, -0.48706943, -0.0046352446, 0.001704812)
+
+[node name="fence2" parent="Cenario/Cerca/fence2/fence2/fence2" unique_id=2028768212 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(0.9999293, 0, 0.011895901, 0, 1, 0, -0.011895901, 0, 0.9999293, -0.48706943, -0.0046352446, 0.001704812)
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cenario/Cerca" unique_id=1298106991]
 transform = Transform3D(-0.024432179, 0, 0.9997015, 0, 1, 0, -0.9997015, 0, -0.024432179, -0.49622893, 0.13549805, 0.18603516)
 shape = SubResource("BoxShape3D_d1tgx")
@@ -80,7 +89,16 @@ shape = SubResource("BoxShape3D_d1tgx")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45273894, 0, -0.0084866285)
 
 [node name="fence2" parent="Cenario/Cerca2" unique_id=1476343676 instance=ExtResource("2_0xm2m")]
-transform = Transform3D(-0.024432179, 0, -0.9997015, 0, 1, 0, 0.9997015, 0, -0.024432179, 0.03759682, 0, 0.18229297)
+transform = Transform3D(-0.024432179, 0, -0.9997015, 0, 1, 0, 0.9997015, 0, -0.024432179, 0.03759682, 0, 0.19796968)
+
+[node name="fence2" parent="Cenario/Cerca2/fence2" unique_id=1862893852 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(0.99982435, -0.01751095, -0.0067015328, 0.017505603, 0.9998463, -0.0008561665, 0.0067155287, 0.00073870283, 0.9999776, 0.49390343, 0.0079497695, 0.004503697)
+
+[node name="fence2" parent="Cenario/Cerca2/fence2/fence2" unique_id=441904065 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(0.9998242, -0.017510949, -0.006701531, 0.017505601, 0.9998462, -0.00085616636, 0.0067155305, 0.00073870266, 0.9999775, 0.5145127, 0.007588387, 0.0038616657)
+
+[node name="fence2" parent="Cenario/Cerca2/fence2/fence2/fence2" unique_id=2014723670 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(0.9993792, -0.017378364, 0.030647222, 0.017452862, 0.99984515, -0.002164988, -0.030604824, 0.0026985253, 0.99952817, 0.4939034, 0.007949768, 0.004503697)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cenario/Cerca2" unique_id=445269090]
 transform = Transform3D(-0.024432179, 0, -0.9997015, 0, 1, 0, 0.9997015, 0, -0.024432179, 0.04396695, 0.13549805, 0.18603516)
@@ -192,13 +210,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16179991, 0, 0.32378817)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08148193, 0, 0)
 
 [node name="Ponto1" type="Marker3D" parent="PontosPatrulha" unique_id=1754448087]
-transform = Transform3D(0.2740329, -0.017092196, -0.96156853, 0.115722045, 0.9931635, 0.015325278, 0.95473266, -0.1154743, 0.2741374, 0.04646504, 0.27145767, 1.0829458)
+transform = Transform3D(-0.9593967, 0.021592587, -0.28123182, 0.28202724, 0.05835492, -0.95763004, -0.004266411, -0.9980625, -0.06207519, 0.07983792, 0.13062704, 0.5600157)
 
 [node name="Ponto2" type="Marker3D" parent="PontosPatrulha" unique_id=1012439936]
-transform = Transform3D(-0.00013848767, 0, -1, 0, 1, 0, 1, 0, -0.00013848767, -0.45475495, -0.03503418, -0.02091235)
+transform = Transform3D(-0.00013848767, 0, -1, 0, 1, 0, 1, 0, -0.00013848767, -0.4758811, -0.03503418, -0.02091235)
 
 [node name="Ponto3" type="Marker3D" parent="PontosPatrulha" unique_id=419697885]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.33808988, -0.14721882, -1.8593268)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.111884296, -0.14721882, -1.7383194)
 
 [connection signal="body_entered" from="Itens/Item" to="Itens/Item" method="_on_body_entered"]
 [connection signal="body_entered" from="Itens/Item2" to="Itens/Item2" method="_on_body_entered"]
