@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bkpqhhwquyyhx" path="res://assets/models/kenney_mini-characters/Models/GLB format/character-male-f.glb" id="5_lquwl"]
 [ext_resource type="Script" uid="uid://cxvs0bxk0k7h1" path="res://item.gd" id="7_5vw27"]
 [ext_resource type="PackedScene" uid="uid://dg834a0olkb8k" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/planter.glb" id="7_272bh"]
+[ext_resource type="Script" uid="uid://5y5hilpwot0x" path="res://hud.gd" id="10_4c57u"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lquwl"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -22,7 +23,7 @@ background_mode = 2
 sky = SubResource("Sky_7mycd")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sx1ah"]
-size = Vector3(0.23026657, 0.001, 0.39677632)
+size = Vector3(1.0816154, 0.001, 6.4912443)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d1tgx"]
 size = Vector3(0.48468018, 0.27685547, 0.07910156)
@@ -32,17 +33,17 @@ size = Vector3(1.2276049, 0.7437134, 1.0376434)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sx1ah"]
 radius = 0.001
-height = 0.17305565
+height = 0.013671875
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_sx1ah"]
-radius = 0.6462073
+radius = 0.43010387
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_17gy4"]
 radius = 0.29355004
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5vw27"]
-radius = 0.12841797
-height = 0.3795166
+radius = 0.13085938
+height = 0.34033203
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3mtt1"]
 size = Vector3(0.26595402, 0.17700195, 0.29495358)
@@ -63,15 +64,8 @@ shadow_enabled = true
 [node name="path-long2" parent="Cenario/Chao" unique_id=1711797615 instance=ExtResource("1_ig7tw")]
 transform = Transform3D(5.35, 0, 0, 0, 1.12, 0, 0, 0, 16.225, 0, -0.00078612566, 0)
 
-[node name="path-long3" parent="Cenario/Chao" unique_id=1765490029 instance=ExtResource("1_ig7tw")]
-transform = Transform3D(5.35, 0, 0, 0, 1.12, 0, 0, 0, 16.225, 0.005099535, -0.00069880486, 6.466768)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cenario/Chao/path-long3" unique_id=473274787]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0018634975, 0, -0.00097322464)
-shape = SubResource("BoxShape3D_sx1ah")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cenario/Chao" unique_id=1063349605]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.009468079, 0, -0.0016930103)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0015850067, 0, 0)
 shape = SubResource("BoxShape3D_sx1ah")
 
 [node name="Cerca" type="StaticBody3D" parent="Cenario" unique_id=168168663]
@@ -115,23 +109,23 @@ script = ExtResource("4_kek77")
 pontos_patrulha = [NodePath("../PontosPatrulha/Ponto1"), NodePath("../PontosPatrulha/Ponto2"), NodePath("../PontosPatrulha/Ponto3")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Inimigo" unique_id=820717532]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17822036, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.043943018, 0)
 shape = SubResource("CapsuleShape3D_sx1ah")
 
 [node name="character-male-c2" parent="Inimigo" unique_id=976872376 instance=ExtResource("4_1bvp3")]
-transform = Transform3D(-0.49999315, 0, -0.0026179869, 0, 0.5, 0, 0.0026179869, 0, -0.49999315, 0, 0, 0)
+transform = Transform3D(-0.49999315, 0, -0.0026179869, 0, 0.5, 0, 0.0026179869, 0, -0.49999315, 0.10720265, 0.01672262, 0.075306654)
 
 [node name="AreaDeteccao" type="Area3D" parent="Inimigo" unique_id=1735718407]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Inimigo/AreaDeteccao" unique_id=303426647]
-transform = Transform3D(0.9878353, 0, 0.15550391, 0, 1, 0, -0.15550391, 0, 0.9878353, -0.03032121, 0.02737552, 0.12135774)
+transform = Transform3D(0.9878353, 0, 0.15550391, 0, 1, 0, -0.15550391, 0, 0.9878353, 0.059850067, 0.02737552, -0.09490961)
 shape = SubResource("SphereShape3D_sx1ah")
 
 [node name="AreaCaptura" type="Area3D" parent="Inimigo" unique_id=484118016]
 transform = Transform3D(-0.50225216, -1.146467e-10, -0.08856066, -1.1641532e-10, 0.5100002, 0, 0.08856067, 2.0215316e-11, -0.5022521, 0.24590942, 0.003612185, -0.4665197)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Inimigo/AreaCaptura" unique_id=2008535842]
-transform = Transform3D(1, 4.0505793e-16, 0, -8.6736174e-19, 0.99999964, -7.979728e-17, 0, -6.2450045e-17, 1, 0.15632123, 0.20343317, -0.99817216)
+transform = Transform3D(1, 4.0766002e-16, 0, -8.6736174e-19, 0.99999964, -9.020562e-17, 0, -7.2858386e-17, 1, 0.1267499, 0.20343313, -1.0033864)
 shape = SubResource("SphereShape3D_17gy4")
 
 [node name="Jogador" type="CharacterBody3D" parent="." unique_id=817542823 groups=["player"]]
@@ -140,15 +134,15 @@ wall_min_slide_angle = 0.46774822
 script = ExtResource("4_7mycd")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Jogador" unique_id=44491679]
-transform = Transform3D(-0.7118476, -0.016136847, 0.7021516, -0.020942492, 0.9997841, 0.0017453275, -0.7020284, -0.013462404, -0.71202457, -0.012897253, 0.19819401, -0.4011681)
+transform = Transform3D(-0.7118396, -0.016136844, 0.7021516, -0.020942282, 0.9997841, 0.0017449971, -0.70203596, -0.013462568, -0.71202457, -0.028393716, 0.23197056, -0.88418746)
 shape = SubResource("CapsuleShape3D_5vw27")
 
 [node name="Camera3D" type="Camera3D" parent="Jogador" unique_id=1172546221]
-transform = Transform3D(-0.99949557, 0.030098172, 0.0101547185, 0.030103223, 0.9995469, 0.00034554183, -0.010139716, 0.0006510571, -0.9999485, -0.022912212, 0.36812672, -1.655478)
+transform = Transform3D(-0.99949557, 0.030098194, 0.0101547185, 0.030103248, 0.9995469, 0.00034554178, -0.010139716, 0.00065105734, -0.99994844, 0.04631146, 0.6302887, -2.2942662)
 fov = 53.952614
 
 [node name="Inimigo" parent="Jogador" unique_id=154288169 instance=ExtResource("5_lquwl")]
-transform = Transform3D(0.5100002, 1.16415315e-10, 0, -1.1641532e-10, 0.5100002, 0, 0, 5.2041704e-18, 0.51000017, -0.022761941, 0.015879432, -0.3967948)
+transform = Transform3D(0.51, 1.8949608e-12, -9.313226e-10, -5.5860405e-09, 0.51, -3.4044517e-11, -2.3283064e-10, -1.9513419e-11, 0.51000017, -0.018252395, 0.038115226, -0.8732307)
 
 [node name="Itens" type="Node3D" parent="." unique_id=191568201]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1981352, -0.0738942)
@@ -169,7 +163,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0036621094, 0.21979558)
 script = ExtResource("7_5vw27")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Itens/Item2" unique_id=2091839378]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5279473, -0.2411241, -0.7818066)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3431957, -0.13931799, -0.84471166)
 shape = SubResource("BoxShape3D_3mtt1")
 
 [node name="planter4" parent="Itens/Item2" unique_id=947330400 instance=ExtResource("7_272bh")]
@@ -212,13 +206,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16179991, -0.16459274, 0.3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08148193, 0, 0)
 
 [node name="Ponto1" type="Marker3D" parent="PontosPatrulha" unique_id=1754448087]
-transform = Transform3D(-0.9593967, 0.021592587, -0.28123182, 0.28202724, 0.05835492, -0.95763004, -0.004266411, -0.9980625, -0.06207519, 0.07983792, 0.13062704, 0.5600157)
+transform = Transform3D(-0.9593967, 0.021592587, -0.28123182, 0.28202724, 0.05835492, -0.95763004, -0.004266411, -0.9980625, -0.06207519, 0.14016739, 0.13062704, 0.2139386)
 
 [node name="Ponto2" type="Marker3D" parent="PontosPatrulha" unique_id=1012439936]
-transform = Transform3D(-0.00013848767, 0, -1, 0, 1, 0, 1, 0, -0.00013848767, -0.4758811, -0.03503418, -0.02091235)
+transform = Transform3D(-0.00013848767, 0, -1, 0, 1, 0, 1, 0, -0.00013848767, 0.11502063, -0.03503418, -1.1425524)
 
 [node name="Ponto3" type="Marker3D" parent="PontosPatrulha" unique_id=419697885]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.111884296, -0.14721882, -1.7383194)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.028410912, -0.018140256, -2.1989164)
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1951854800]
+script = ExtResource("10_4c57u")
+
+[node name="RotuloPontuacao" type="Label" parent="HUD" unique_id=1617781497]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 171.0
+offset_bottom = 66.0
+theme_override_font_sizes/font_size = 32
+text = "Pontos : 0"
 
 [connection signal="body_entered" from="Itens/Item" to="Itens/Item" method="_on_body_entered"]
 [connection signal="body_entered" from="Itens/Item2" to="Itens/Item2" method="_on_body_entered"]
