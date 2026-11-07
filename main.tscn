@@ -37,10 +37,10 @@ radius = 0.08544922
 height = 0.359375
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_sx1ah"]
-radius = 0.20986818
+radius = 0.29639566
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_17gy4"]
-radius = 0.37291342
+radius = 0.46266866
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5vw27"]
 radius = 0.13085938
@@ -119,14 +119,14 @@ pontos_patrulha = [NodePath("../PontosPatrulha/Ponto1"), NodePath("../PontosPatr
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.20383161, 0.04343319)
 shape = SubResource("CapsuleShape3D_efxa6")
 
-[node name="character-male-c2" parent="Inimigo" unique_id=976872376 instance=ExtResource("4_1bvp3")]
+[node name="Modelo" parent="Inimigo" unique_id=976872376 instance=ExtResource("4_1bvp3")]
 transform = Transform3D(-0.49999315, 0, -0.0026179869, 0, 0.5, 0, 0.0026179869, 0, -0.49999315, 0, 0, 0)
 
 [node name="AreaDeteccao" type="Area3D" parent="Inimigo" unique_id=1735718407]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.1370196)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.40930176, 0.16430664, -3.1370196)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Inimigo/AreaDeteccao" unique_id=303426647]
-transform = Transform3D(0.9878353, 0, 0.15550391, 0, 1, 0, -0.15550391, 0, 0.9878353, 0.18754432, 0.02737552, 0.332282)
+transform = Transform3D(0.9878353, 0, 0.15550391, 0, 1, 0, -0.15550391, 0, 0.9878353, 0.34037635, 0.02737552, 2.1610174)
 shape = SubResource("SphereShape3D_sx1ah")
 
 [node name="AreaCaptura" type="Area3D" parent="Inimigo" unique_id=484118016]
@@ -211,16 +211,16 @@ shape = SubResource("BoxShape3D_3mtt1")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45489925, -0.16459274, 1.0556093)
 
 [node name="PontosPatrulha" type="Node3D" parent="." unique_id=541132768]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08148193, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08148193, 0, 0.015136719)
 
 [node name="Ponto1" type="Marker3D" parent="PontosPatrulha" unique_id=1754448087]
-transform = Transform3D(-0.9593967, 0.021592587, -0.28123182, 0.28202724, 0.05835492, -0.95763004, -0.004266411, -0.9980625, -0.06207519, 0.21758549, 0.13062704, -0.54304075)
+transform = Transform3D(-0.9593967, 0.021592587, -0.28123182, 0.28202724, 0.05835492, -0.95763004, -0.004266411, -0.9980625, -0.06207519, 0.14983648, 0.13062704, 1.5354505)
 
 [node name="Ponto2" type="Marker3D" parent="PontosPatrulha" unique_id=1012439936]
-transform = Transform3D(-0.00013848767, 0, -1, 0, 1, 0, 1, 0, -0.00013848767, -0.377585, -0.03503418, -2.892024)
+transform = Transform3D(-0.00013848767, 0, -1, 0, 1, 0, 1, 0, -0.00013848767, -0.36311966, -0.03503418, -1.89886)
 
 [node name="Ponto3" type="Marker3D" parent="PontosPatrulha" unique_id=419697885]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.015889734, -0.018140256, -4.0508842)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35503158, -0.018140256, -4.8704643)
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=1951854800]
 script = ExtResource("10_4c57u")
