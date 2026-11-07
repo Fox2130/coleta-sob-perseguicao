@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-const VELOCIDADE := 2.0
+const VELOCIDADE := 2.5
 
 const GRAVIDADE := 2.0
 
@@ -13,6 +13,13 @@ func _physics_process(delta: float) -> void:
 	direcao.z = Input.get_axis("move_forward", "move_back")
 	
 	direcao = direcao.normalized()
+	
+	if direcao != Vector3.ZERO:
+		$Modelo/AnimationPlayer.play("walk")
+	
+	else:
+
+		$Modelo/AnimationPlayer.play("idle")
 	
 	velocity.x = direcao.x * VELOCIDADE
 	velocity.z = direcao.z * VELOCIDADE
