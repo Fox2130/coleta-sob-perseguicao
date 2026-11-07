@@ -16,6 +16,8 @@ var velocidade_atual := VELOCIDADE_BASE
 const DISTANCIA_CHEGADA := 0.2
 
 func _physics_process(_delta: float) -> void:
+	if GameManager.jogo_encerrado:
+		return
 	velocidade_atual = VELOCIDADE_BASE * GameManager.dificuldade
 
 
@@ -33,8 +35,12 @@ func _physics_process(_delta: float) -> void:
 func  _ready() -> void:
 	$AreaDeteccao.body_entered.connect(_ao_detectar_corpo_entrar)
 	$AreaDeteccao.body_exited.connect (_ao_detectar_corpo_sair)
-	$AreaCaptura.body_entered.connect(_ao_detectar_corpo_entrar)
+	$AreaCaptura.body_entered.connect(_ao_capturar_corpo_entrar)
 	
+func _ao_capturar_corpo_entrar(corpo: Node3D) -> void:
+	if corpo.is_in_group("player"):
+		GameManager.perder()
+		
 func  _ao_detectar_corpo_sair( corpo: Node3D) -> void:
 	if corpo.is_in_group("player"):
 		referencia_jogador = null
@@ -42,7 +48,6 @@ func  _ao_detectar_corpo_sair( corpo: Node3D) -> void:
 		
 func _ao_detectar_corpo_entrar(corpo: Node3D) -> void:
 	if corpo.is_in_group("player"):
-		GameManager.perder()
 		
 		referencia_jogador = corpo
 		estado = Estado. PERSEGUICAO

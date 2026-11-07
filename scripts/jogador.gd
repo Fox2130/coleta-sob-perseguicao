@@ -5,7 +5,8 @@ const VELOCIDADE := 2.0
 const GRAVIDADE := 2.0
 
 func _physics_process(delta: float) -> void:
-	
+	if GameManager.jogo_encerrado:
+		return
 	var direcao := Vector3. ZERO
 	
 	direcao.x = Input.get_axis("move_left", "move_rigth")
