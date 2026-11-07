@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cesiu63hbgbm0"]
 
+[ext_resource type="Script" uid="uid://c6berypoeq5me" path="res://principal.gd" id="1_efxa6"]
 [ext_resource type="PackedScene" uid="uid://bt2j3leotjaav" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/path-long.glb" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://vnrfq48e6atr" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/fence.glb" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bbtv6l73vr5m4" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/building-type-a.glb" id="3_h2yge"]
@@ -49,6 +50,7 @@ height = 0.34033203
 size = Vector3(0.26595402, 0.17700195, 0.28334105)
 
 [node name="Principal" type="Node3D" unique_id=1982080408]
+script = ExtResource("1_efxa6")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1879553728]
 environment = SubResource("Environment_272bh")
@@ -211,13 +213,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45489925, -0.16459274, 1.05
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08148193, 0, 0)
 
 [node name="Ponto1" type="Marker3D" parent="PontosPatrulha" unique_id=1754448087]
-transform = Transform3D(-0.9593967, 0.021592587, -0.28123182, 0.28202724, 0.05835492, -0.95763004, -0.004266411, -0.9980625, -0.06207519, 0.16327855, 0.13062704, 0.64727485)
+transform = Transform3D(-0.9593967, 0.021592587, -0.28123182, 0.28202724, 0.05835492, -0.95763004, -0.004266411, -0.9980625, -0.06207519, 0.12718181, 0.13062704, 0.64727485)
 
 [node name="Ponto2" type="Marker3D" parent="PontosPatrulha" unique_id=1012439936]
-transform = Transform3D(-0.00013848767, 0, -1, 0, 1, 0, 1, 0, -0.00013848767, 0.056090117, -0.03503418, -0.7198626)
+transform = Transform3D(-0.00013848767, 0, -1, 0, 1, 0, 1, 0, -0.00013848767, -0.13799948, -0.03503418, -2.3089192)
 
 [node name="Ponto3" type="Marker3D" parent="PontosPatrulha" unique_id=419697885]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0030893683, -0.018140256, -1.3613197)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12410131, -0.018140256, -1.1300194)
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=1951854800]
 script = ExtResource("10_4c57u")

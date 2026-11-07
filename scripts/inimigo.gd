@@ -9,7 +9,7 @@ var referencia_jogador: Node3D = null
 	
 var indice_patrulha := 0
 
-const VELOCIDADE_BASE  : = 0.5
+const VELOCIDADE_BASE  : = 1.5
 
 var velocidade_atual := VELOCIDADE_BASE
 
@@ -42,7 +42,7 @@ func  _ao_detectar_corpo_sair( corpo: Node3D) -> void:
 		
 func _ao_detectar_corpo_entrar(corpo: Node3D) -> void:
 	if corpo.is_in_group("player"):
-		print("Peguei você!")
+		GameManager.perder()
 		
 		referencia_jogador = corpo
 		estado = Estado. PERSEGUICAO
