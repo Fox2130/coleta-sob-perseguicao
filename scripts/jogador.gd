@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-const VELOCIDADE := 2.5
+const VELOCIDADE := 1.5
 
 const GRAVIDADE := 2.0
 
